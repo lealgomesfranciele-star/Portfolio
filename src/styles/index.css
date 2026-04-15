@@ -407,3 +407,9 @@ img { max-width: 100%; display: block; }
     .footer-flex { flex-direction: column; gap: 8px; text-align: center; }
     .skill-leaves { grid-template-columns: repeat(2,1fr); gap: 28px 20px; }
 }
+
+/* React: garantir visibilidade */
+[data-anim] {
+    opacity: 1 !important;
+    transform: none !important;
+}
