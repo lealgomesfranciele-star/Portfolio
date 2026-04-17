@@ -407,3 +407,35 @@ img { max-width: 100%; display: block; }
     .footer-flex { flex-direction: column; gap: 8px; text-align: center; }
     .skill-leaves { grid-template-columns: repeat(2,1fr); gap: 28px 20px; }
 }
+
+/* Projetos main/HTML */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.projeto-card {
+    background: #fff;
+    border: 1px solid #e8e5dc;
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.35s ease;
+    text-align: center;
+}
+.projeto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+.projeto-emoji { font-size: 2.8rem; margin-bottom: 1rem; }
+.projeto-titulo { font-family: 'Lora', serif; font-size: 1.25rem; color: #3b4a2f; margin-bottom: 0.6rem; }
+.projeto-descricao { color: #6b7162; font-size: 0.95rem; margin-bottom: 1.2rem; }
+.projeto-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
+.projeto-tag {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.8rem;
+    background: #f5f3eb;
+    color: #6b7162;
+    border-radius: 100px;
+    font-weight: 500;
+}

@@ -71,3 +71,27 @@ window.addEventListener('scroll', () => {
         link.classList.toggle('active', link.getAttribute('href') === '#' + current);
     });
 });
+
+// --- Renderização dinâmica de Projetos ---
+const projetos = [
+    { id: 1, titulo: 'Projeto Comunitário', descricao: 'Participação em ação voltada ao cuidado com o meio ambiente e engajamento local, com foco em colaboração e impacto social.', tags: ['Voluntariado', 'Natureza', 'Impacto'], emoji: '🌱' },
+    { id: 2, titulo: 'Trabalho Acadêmico', descricao: 'Pesquisa em grupo desenvolvida durante o curso, exercitando trabalho colaborativo e comunicação eficaz.', tags: ['Pesquisa', 'Grupo', 'Apresentação'], emoji: '📚' },
+    { id: 3, titulo: 'Capacitação Profissional', descricao: 'Participação em cursos e workshops para aprimoramento de habilidades e atualização contínua.', tags: ['Aprendizado', 'Desenvolvimento'], emoji: '🌸' },
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('projetosContainer');
+    if (!container) return;
+    projetos.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'projeto-card';
+        card.setAttribute('data-anim', '');
+        card.innerHTML = `
+            <div class="projeto-emoji">${p.emoji}</div>
+            <h3 class="projeto-titulo">${p.titulo}</h3>
+            <p class="projeto-descricao">${p.descricao}</p>
+            <div class="projeto-tags">${p.tags.map(t => `<span class="projeto-tag">${t}</span>`).join('')}</div>
+        `;
+        container.appendChild(card);
+    });
+});
